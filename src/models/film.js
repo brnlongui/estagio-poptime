@@ -15,7 +15,11 @@ const FilmSchema = new mongoose.Schema({
     },
     year: {
         type: String,
-    }
+        required: true,
+    },
+    watched: {
+        type: Boolean,
+    },
 });
 
 mongoose.model('Film', FilmSchema);

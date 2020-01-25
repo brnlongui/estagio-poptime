@@ -8,11 +8,9 @@ const ProfileSchema = new mongoose.Schema({
     },
     watchList: {
         type: Array,
-        required: true,
     },
     recommendedList: {
         type: Array,
-        required: true,
     },
 });
 

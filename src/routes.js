@@ -10,5 +10,15 @@ routes.post('/user', UserController.create);
 routes.put('/user/:id', UserController.update);
 routes.delete('/user/:id', UserController.remove);
 
+routes.get('/profile', ProfileController.findAll);
+routes.post('/profile', ProfileController.create);
+routes.put('/profile/:id', ProfileController.update);
+routes.delete('/profile/:id', ProfileController.remove);
+
+routes.get('/film', FilmController.findAll);
+routes.post('/film', FilmController.create);
+routes.put('/film/:id', FilmController.update);
+routes.delete('/film/:id', FilmController.remove);
+
 
 module.exports = routes;

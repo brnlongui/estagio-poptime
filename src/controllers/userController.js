@@ -21,6 +21,6 @@ module.exports = {
     async remove(req, res){
         await User.findByIdAndRemove(req.params.id);
         return res.send();
-    }
+    },
 
 }
