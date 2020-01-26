@@ -17,12 +17,13 @@ const UserSchema = new mongoose.Schema({
         select: false,
     },
     dateBirth:{
-        type: Date,
+        type: String,
         required: true,
     },
     profile:{
         type: Array,
         required: false,
+        max: 4,
     },
 
 });

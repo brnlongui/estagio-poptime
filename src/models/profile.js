@@ -5,12 +5,14 @@ const ProfileSchema = new mongoose.Schema({
         type: String,
         unique: true,
         required: true,
+        maxlength: 10,
     },
     watchList: {
         type: Array,
     },
     recommendedList: {
         type: Array,
+        max: 10,
     },
 });
 

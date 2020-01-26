@@ -5,9 +5,15 @@ const Profile = mongoose.model('Profile');
 
 module.exports = {
     async findAll(req, res){
-        const profile = await Profile.find();
+        const {page = 1} = req.query;
+        const profile = await Profile.paginate({},{page,limit: 10});
         return res.json(profile);
     },
+
+    async show(req, res){
+        const profile = await Profile.findById(req.params.id);
+        return res.json(profile);
+    },  
 
     async create (req, res){
        const profile = await Profile.create(req.body);

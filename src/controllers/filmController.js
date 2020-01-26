@@ -8,6 +8,11 @@ module.exports = {
         return res.json(film);
     },
 
+    async show(req, res){
+        const film = await Film.findById(req.params.id);
+        return res.json(film);
+    },
+
     async create (req, res){
        const film = await Film.create(req.body);
        return res.json(film);
