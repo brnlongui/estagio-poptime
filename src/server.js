@@ -6,7 +6,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect('mongodb+srv://omnistack:omnistack@estagio-jera-sbvla.mongodb.net/test?retryWrites=true&w=majority',{
+mongoose.connect('mongodb://localhost:27017/api',{
     useNewUrlParser: true,
     useFindAndModify : false,
     useCreateIndex: true,
