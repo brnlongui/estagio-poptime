@@ -5,8 +5,7 @@ const Profile = mongoose.model('Profile');
 
 module.exports = {
     async findAll(req, res){
-        const {page = 1} = req.query;
-        const profile = await Profile.paginate({},{page,limit: 10});
+        const profile = await Profile.find();
         return res.json(profile);
     },
 
