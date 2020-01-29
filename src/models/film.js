@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const FilmSchema = new mongoose.Schema({
     id: {
         type : Number,
-        required: true,
+        required: false,
     },
     name: {
         type: String,
