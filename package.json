@@ -1,7 +1,7 @@
 {
   "name": "estagio",
   "version": "1.0.0",
-  "description": "",
+  "description": "desenvolvido por mim para o desafio técnico de estagio na empresa jera.",
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.19.2",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongoose": "^5.8.9",
@@ -18,5 +19,13 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brnlongui/estagio-poptime.git"
+  },
+  "bugs": {
+    "url": "https://github.com/brnlongui/estagio-poptime/issues"
+  },
+  "homepage": "https://github.com/brnlongui/estagio-poptime#readme"
 }

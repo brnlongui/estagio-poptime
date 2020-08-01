@@ -11,7 +11,7 @@ routes.put('/user/:id', UserController.update);
 routes.delete('/user/:id', UserController.remove);
 
 routes.get('/profile', ProfileController.findAll);
-routes.get('/profile/:id', ProfileController.show)
+routes.get('/profile/:id', ProfileController.show);
 routes.post('/profile', ProfileController.create);
 routes.put('/profile/:id', ProfileController.update);
 routes.delete('/profile/:id', ProfileController.remove);
