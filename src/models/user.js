@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Profile = mongoose.model('Profile');
 
 const UserSchema = new mongoose.Schema({
     name: {
@@ -20,11 +21,10 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    profile:{
-        type: Array,
-        required: false,
-        max: 4,
-    },
+    profile:[{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: Profile
+    }],
 
 });
 

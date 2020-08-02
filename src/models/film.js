@@ -1,25 +1,21 @@
 const mongoose = require('mongoose');
 
 const FilmSchema = new mongoose.Schema({
-    id: {
+    movie_id: {
         type : Number,
-        required: false,
+        required: true,
     },
     name: {
         type: String,
-        required: true,
     },
     genre: {
-        type: String,
-        required: true,
+        type: Array,
     },
     overview: {
         type: String, 
-        required: true,
     },
     year: {
         type: String,
-        required: true,
     },
     watched: {
         type: Boolean,
