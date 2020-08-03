@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+const User = mongoose.model('User');
 const Profile = mongoose.model('Profile');
 
 
@@ -12,11 +13,17 @@ module.exports = {
     async show(req, res){
         const profile = await Profile.findById(req.params.id);
         return res.json(profile);
-    },  
+    },
 
     async create (req, res){
-       const profile = await Profile.create(req.body);
-       return res.json(profile);
+        const {user} = req.headers;
+        const logged = await User.findById(user);
+        const profile = await Profile.create(req.body);
+
+        logged.profiles.push(profile._id);
+        await logged.save();
+
+        return res.json(profile);
     },
 
     async update(req, res){
