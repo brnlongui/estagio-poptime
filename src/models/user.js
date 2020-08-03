@@ -21,11 +21,17 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    profile:[{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: Profile
-    }],
+    profiles:{
+        type:
+        [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: Profile,
+        }],
+        validate: [arrayLimit, '{PATH} exceeds the limit of 4']
+    }
 
 });
-
+function arrayLimit(val) {
+    return val.length <= 4;
+}
 mongoose.model('User', UserSchema);
