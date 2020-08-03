@@ -1,6 +1,7 @@
 const axios = require('axios');
 const mongoose = require('mongoose');
 
+const Profile = mongoose.model('Profile');
 const Film = mongoose.model('Film');
 
 module.exports = {
@@ -16,11 +17,15 @@ module.exports = {
 
     async create (req, res){
         const {movie_id} = req.body;
+        const {profile} = req.headers;
 
         const movieExists = await Film.findOne({movie_id});
         if(movieExists){
             return res.json(movieExists);
         }
+        
+        const logged = await Profile.findById(profile);
+        
         const film = await axios.get(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=1bcc763d1279f4d2d3cb5a06f1093374&language=pt-BR`);
         const { title, genres, overview, year} = film.data;
         const movie = await Film.create({
@@ -30,7 +35,9 @@ module.exports = {
             overview,
             year,
             watched: false
-        })
+        });
+        logged.watchList.push(movie._id);
+        await logged.save();
         return res.json(movie);
     },
 
