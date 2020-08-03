@@ -36,7 +36,7 @@ module.exports = {
             year,
             watched: false
         });
-        logged.watchList.push(movie._id);
+        logged.watchList.unshift(movie._id);
         await logged.save();
         return res.json(movie);
     },
