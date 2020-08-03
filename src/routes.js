@@ -5,8 +5,10 @@ const SearchController = require('./controllers/searchController')
 const UserController = require('./controllers/userController');
 const FilmController = require('./controllers/filmController');
 const ProfileController = require('./controllers/profileController');
+const RecommendedController = require('./controllers/recommendedController');
 
 routes.post('/index', SearchController.search);
+routes.post('/store', RecommendedController.store);
 
 routes.get('/user', UserController.index);
 routes.post('/user', UserController.create);
