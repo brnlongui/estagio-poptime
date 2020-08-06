@@ -10,6 +10,7 @@ desenvolvido por mim para o desafio técnico de estagio na empresa jera.
 #### na linha de comando digite
 - git clone https://github.com/brnlongui/estagio-poptime
 - cd estagio-poptime
+- npm install
 - para conectar o mongodb para testes de requisição digite: sudo service mongod start ou sudo systemctl start mongod
 - npm run dev (necessário ter a porta 3000 livre ou trocar no projeto, idem com a porta 27017 para o MongoDB)
 ### informativo
